@@ -1,0 +1,93 @@
+$nb-columns: 15;
+$small-screen: 576px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$xlarge-screen: 1200px;
+
+@mixin flex-item($i) {
+    width: $i * (100 / $nb-columns * 1%);
+    flex-shrink: 0;
+    height: auto;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.col {
+    width: 0%;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+@for $i from 1 through $nb-columns {
+    .col-#{$i} {
+        @include flex-item($i);
+    }
+}
+
+@media screen and (min-width: $small-screen) {
+    @for $i from 1 through $nb-columns {
+        .col-sm-#{$i} {
+            @include flex-item($i);
+        }
+    }
+}
+
+@media screen and (min-width: $medium-screen) {
+    @for $i from 1 through $nb-columns {
+        .col-md-#{$i} {
+            @include flex-item($i);
+        }
+    }
+}
+
+@media screen and (min-width: $large-screen) {
+    @for $i from 1 through $nb-columns {
+        .col-lg-#{$i} {
+            @include flex-item($i);
+        }
+    }
+}
+
+@media screen and (min-width: $xlarge-screen) {
+    @for $i from 1 through $nb-columns {
+        .col-xl-#{$i} {
+            @include flex-item($i);
+        }
+    }
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
