@@ -1,4 +1,4 @@
-$nb-columns: 15;
+$nb-columns: 12;
 $small-screen: 576px;
 $medium-screen: 768px;
 $large-screen: 992px;
@@ -14,12 +14,6 @@ $xlarge-screen: 1200px;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-}
-
-.col {
-    width: 0%;
-    flex-shrink: 1;
-    flex-grow: 1;
 }
 
 @for $i from 1 through $nb-columns {
